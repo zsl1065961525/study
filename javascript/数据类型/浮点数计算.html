@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			alert(0.1 + 0.2)//0.30000000000000004
+			var a = 0.1;
+			var b = 0.2;
+			alert(a+b)//0.30000000000000004
+			
+			var c = 10
+			var d = "10"
+//			alert(c/d)
+			alert(isNaN(c+d))//flase
+			alert(isNaN(c-d))//flase
+			alert(isNaN(c*d))//flase
+			alert(isNaN(c/d))//flase
+			
+			
+			console.log("a+b"+isNaN(c+d));  //flase
+			console.log("a+b"+isNaN(c-d));  //flase
+			console.log("NaN"+isNaN(NaN));  //true
+			alert(isNaN(NaN)) //ture
+		</script>
+	</body>
+</html>
