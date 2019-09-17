@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#container{
+				width: 1000px;
+				height: 800px;
+				border: 1px solid #74908C;
+				/*将容器变为弹性,默认/*主轴在x轴,起点在左端*/
+				display: flex;
+				/*主轴为x,起点在右端*/
+				/*flex-direction: row-reverse;*/
+				
+				/*主轴在y轴,起点在顶端*/
+				/*flex-direction: column;*/
+				
+				/*主轴在y轴,起点在底端*/
+				/*flex-direction: column-reverse;*/
+				/*flex-wrap:nowrap;*/
+				
+				/*主轴对齐*/
+				/*justify-content:space-around;*/
+				
+				/*在交叉轴上对齐*/
+				/*align-items:stretch;*/
+				
+			}
+			#container>div{
+				width: 200px;
+				/*height: 200px;*/
+			}
+			.item1{
+				background: red;
+			}
+			.item2{
+				background: blue;
+			}
+			.item3{
+				background: green;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="container">
+			<div class="item1"></div>
+			<div class="item2"></div>
+			<div class="item3"></div>
+		</div>
+	</body>
+</html>

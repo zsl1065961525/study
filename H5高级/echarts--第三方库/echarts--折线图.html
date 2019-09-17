@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>折线图</title>
+		<script src="../js/echarts.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="main" style="width: 500px; height: 400px;">
+			
+		</div>
+		<script type="text/javascript">
+			//获取容器
+			var main=document.getElementById("main")
+			//创建echarts对象
+			var myechart=echarts.init(main);
+			//创建配置项
+			var option={
+				title:{text:"评最喜爱的老师"},
+				xAxis:{data:["王琳","许小玉","连耀光","梁哲"]},
+				yAxis:{},
+				series: [{type:"line",data:[30,28,10,40]}]
+			}
+			//将配置项添加echarts对象中
+		    myechart.setOption(option);
+		</script>
+	</body>
+</html>

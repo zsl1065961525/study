@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>自制视频播放器</title>
+		<style type="text/css">
+			body{
+				text-align: center;
+			}
+			.container{
+				position: relative;
+			}
+			#v3{
+				position: absolute;  
+			    top: 20%;
+			    left:20%;
+			}
+			.advertisement img{
+				width: 300px;
+				height: 200px;
+				position: absolute;
+				top: 120px;
+				left: 36%;
+			}
+			.control{
+				position: absolute;
+				top: 200px;
+				left: 45%;
+			}
+		</style>
+	</head>
+	<body>
+		<h3>视频播放器</h3>
+		<div class="container">
+			<!--视频元素-->
+			<div class="video">
+				<video width="800px" height="450px" id="v3" controls="controls">
+					<source src="mda-im5fq8cpdv49eusq.mp4" ></source>
+					<source src="mda-im5fq8cpdv49eusq.org" ></source>
+		        </video>
+			</div>
+			<!--广告-->
+			<div class="advertisement">
+				<img src="u=2665514666,1725651208&fm=26&gp=0.jpg"/>
+			</div>
+			<!--播放控制按钮-->
+			<div class="control">
+				<a href="#" class="con"><img src="play.png"  /></a>
+			</div>
+		</div>
+		
+		<script type="text/javascript">
+			//1.获取最外层元素 
+			  var container=document.querySelector(".container");
+//			  console.log(container);
+			//2.获取按钮
+			  var con=document.querySelector(".con");   
+			//3.获取广告
+			  var advertisement=document.querySelector(".advertisement");   
+			//4.获取视频元素
+			  var v3=document.getElementById("v3"); 
+			//5.实现鼠标移入显示按钮
+			
+			//获取播放暂停按钮
+			var conImg=document.querySelector(".con img")
+			
+			  container.onmouseover=function(){
+			  	 con.style.display="block";
+			  }
+			  //     鼠标移出隐藏按钮
+			  container.onmouseout=function(){
+			  	 con.style.display="none";
+			  }
+			//6.获取按钮的点击事件
+			   con.onclick=function(){
+			   	 //7.判断条件
+			   	 if(v3.paused){//当处于暂停状态
+			   	 	//8.播放视频
+			   	 	  v3.play();
+			   	 	//调整音量
+			   	 	v3.volume=0.2;
+			   	 	conImg.src="pause.png"
+			   	 }else{
+			   	 	//9.暂停视频
+			   	 	v3.pause()
+			   	 	conImg.src="play.png"
+			   	 }
+			   }
+			   
+//			   视频播放时,广告隐藏
+              v3.onplay=function(){
+              	 advertisement.style.display="none"
+              }
+//           视频暂停时,广告显示
+              v3.onpause=function(){
+              	 advertisement.style.display="block"
+              }
+		</script>
+	</body>
+</html>

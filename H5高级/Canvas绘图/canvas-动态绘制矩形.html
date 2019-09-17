@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>canvas绘图</title>
+		<style type="text/css">
+			body{
+				text-align: center;
+			}
+			canvas{
+				background: #cecece;
+			}
+		</style>
+	</head>
+	<body>
+		<h2>htnl5--新特性canvas</h2>
+		<!--绘制画布-->
+		<canvas width="500px" height="400px" id="c3">
+                     您的浏览器版本太低,请升级
+        </canvas>
+        <script type="text/javascript">
+        	//向左移动
+        	//1.获取画布
+        	var c3=document.getElementById("c3")
+        	//2.获取画笔
+        	var ctx=c3.getContext("2d");
+        	//边框颜色
+        	ctx.strokeStyle="red";
+        	//左右移动的矩形
+        	//创建一个变量x,保存矩形x的位置
+        	var x=0;
+        	var xDirection=1;  //1 向右 ; -1  向左
+        	//创建一个定时器
+        	var timer=setInterval(function(){
+        	 	//清除原有矩形
+        	 	   ctx.clearRect(0,0,500,400);
+        	 	//修改x位置
+        	 	   x+=5*xDirection;
+        	 	//重新绘制矩形
+        	 	ctx.strokeRect(x,0,100,80)
+        	 	//判断  如果xDirection=-1,向左 ;如果xDirection=1,向右
+        	 	 if(x>400 ){
+        	 	 	xDirection=-1;
+        	 	 }else if(x<0 ){
+        	 	 	xDirection=1;
+        	 	 }
+        	 },50)
+        	
+        	//向下移动
+//      	var c3=document.getElementById("c3")
+//      	var ctx=c3.getContext("2d")
+//      	ctx.strokeStyle="blue"
+//      	var y=0;
+//      	var yDirection=1;
+//      	var timer=setInterval(function(){
+//      		ctx.clearRect(0,0,500,400);
+//      		y+=5*yDirection;
+//      		ctx.strokeRect(0,y,100,80)
+//      		if (y>320) {
+//      			yDirection=-1;
+//      		} else if(y<0){
+//      			yDirection=1
+//      		}
+//      	},50)
+        	
+        	//45度移动
+//      	var c3=document.getElementById("c3")
+//      	var ctx=c3.getContext("2d")
+//      	ctx.strokeStyle="yellow"
+//      	var x=0
+//      	var y=0;
+//      	var xDirection=1;
+//      	var yDirection=1;
+//      	var timer=setInterval(function(){
+//      		ctx.clearRect(0,0,500,400);
+//      		x+=5*xDirection;
+//      		y+=5*yDirection;
+//      		ctx.strokeRect(x,y,100,80)
+//      		if (x>400,y>320) {
+//      			xDirection=-1;
+//      			yDirection=-1;
+//      		} else if(x<0,y<0){
+//      			xDirection=1
+//      			yDirection=1
+//      		}
+//      	},50)
+        </script>
+	</body>
+</html>

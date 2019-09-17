@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>使用canvas绘制路径</title>
+		<style type="text/css">
+			body{
+				text-align: center;
+			}
+			canvas{
+				background: yellowgreen;
+			}
+		</style>
+	</head>
+	<body>
+		<h2>canvas绘制新路径</h2>
+		<!--绘制画布-->
+		<canvas width="500px" height="400px" id="c3">
+                       您的浏览器版本太低,请升级
+        </canvas>
+        <script type="text/javascript">
+        	var c3=document.getElementById("c3")
+        	var ctx=c3.getContext("2d");
+//      	正方形画法
+//      	//开始新路径
+//      	ctx.beginPath();
+//      	//移动到指定点
+//      	ctx.lineTo(350,200)
+//      	ctx.lineTo(350,300)
+//      	ctx.lineTo(250,300)
+//      	ctx.closePath();
+//      	ctx.lineWidth=5;
+//      	ctx.strokeStyle="#FF0000";
+//      	ctx.stroke();
+
+//          坐标轴画法
+//          横轴
+//          ctx.beginPath();
+//          ctx.lineTo(10,380);
+//          ctx.lineTo(488,380);
+//          ctx.lineTo(470,370);
+//          ctx.lineTo(488,380);
+//          ctx.lineTo(470,390);
+//          ctx.lineWidth=5;
+//      	ctx.strokeStyle="#FF0000";
+//          ctx.stroke();
+//          纵轴
+//          ctx.beginPath();
+//          ctx.lineTo(10,380);
+//          ctx.lineTo(10,20);
+//          ctx.lineTo(0,25);
+//          ctx.lineTo(10,20);
+//          ctx.lineTo(20,25);
+//          ctx.lineWidth=5;
+//      	ctx.strokeStyle="blue";
+//          ctx.stroke();
+
+//          五角星画法
+            ctx.beginPath();
+            ctx.lineTo(150,150);
+            ctx.lineTo(200,150);
+            ctx.lineTo(230,100);
+            ctx.lineTo(260,150);
+            ctx.lineTo(310,150);
+            ctx.lineTo(280,200);
+            ctx.lineTo(270,200);
+            ctx.lineWidth=5;
+        	ctx.strokeStyle="yellow";
+            ctx.stroke();
+        </script>
+	</body>
+</html>

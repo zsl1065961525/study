@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>canvas--图像变形</title>
+		<style type="text/css">
+			body{
+				text-align: center;
+			}
+		    canvas{
+		    	background: #9ACD32;
+		    }
+		</style>
+	</head>
+	<body>
+		<h2>canvas--图像变形</h2>
+		<canvas id="c3" width="500" height="400">
+			您的版本过低,请升级
+		</canvas>
+		
+		<!--实现:在画布的中心绘制一架旋转飞机,以自己为中心旋转-->
+		<script type="text/javascript">
+			 var c3=document.getElementById("c3");
+			 var ctx=c3.getContext("2d")
+			 //创建一个图片p3
+			 var  p3=new Image();  
+             p3.src="img/p3.png"   
+             //创建变量保存旋转的角度
+             var deg=10*Math.PI/180
+			 p3.onload = function() {  
+			     //平移坐标原点
+			     ctx.translate(250,200)
+			 } 
+			 var timer=setInterval(function(){
+			 	ctx.clearRect(250,200,500,400)
+			 	ctx.rotate(deg)
+			 	ctx.drawImage(p3,-100,100)
+			 },800)
+			 
+			 
+		</script>
+	</body>
+</html>

@@ -1,0 +1,109 @@
+如何手写响应式：
+      1.添加viewport元标签(视口)
+           <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable="no">
+	           initial-scale：设置初始化的缩放值    
+	                                            取值：一般为1.0（100%）
+	           user-scalable="no"/"yes" :是否允许用户手动缩放
+      2.容器的宽度尽量使用相对尺寸，不用绝对单位
+             .container{
+                  width:100%;
+                  height:auto;
+             }
+      3.文字尽量使用相对单位，不用绝对尺寸
+             .txt{
+                font-siz:0.8em/1rem;
+                   //em:相对的是最近的父元素
+                   //rem:相对的是HTML根元素
+             }
+      4.图片尽量使用相对单位代替绝对单位
+				      .img{
+				         width:100%;
+				         max-width:100%;  //最大宽为:100%
+				      }
+      5.尽量避免固定布局，使用流式布局
+                           流式布局:1.浮动, 2.inline-block  
+                      3.栅格系统(又称:流式网格布局)
+                                                       将页面整体的宽度设置为100%,并且等分为12列,
+                            .col-1{
+                               width:8.33%;
+                            }
+                            .col-2{
+                               width:16.66%;
+                            }
+                            .col-3{
+                               width:24.99%;
+                            }
+                            .col-4{
+                               width:33.32%;
+                            }
+                            .col-5{
+                               width:41.65%;
+                            }
+                            .col-6{
+                               width:49.98%;
+                            }
+                            .col-7{
+                               width:58.31%;
+                            }
+                            .col-8{
+                               width:66.64%;
+                            }
+                            .col-9{
+                               width:74.97%;
+                            }
+                            .col-10{
+                               width:83.30%;
+                            }
+                            .col-11{
+                               width:91.63%;
+                            }
+                            .col-12{
+                               width:99.96%;
+                            }
+                            [class*=col-]{
+                              float:left;
+                            }------col-全部向左浮动
+      6.使用CSS Media Query 技术，实现有选择性的执行内部CSS
+             CSS3中的媒体查询技术
+                 Media:媒体,媒介,指浏览网页的设备,如screen(pc/pad/phone/watch)
+                       ,print,TV,projection,tty(命令行,针式打印机)等
+                 Query:查询出浏览器设备的特性,如宽、高、色彩深度、解析度、方向等.
+                 CSS3 Media Query：在css中，根据浏览器设备类型，特性的不同而有选择性的执行不同的css代码
+                  使用方法：1.为不同的设备编写不同的css文件，让浏览器有选择的加以执行
+                                         直接引用
+						                         大屏幕：<link media="screen and(min-width:768px) and(max-width:1200px)" rel="stylesheet" href="css/pc.css"/>                
+						                         小屏幕： <link media="screen and(min-width:768px) and(max-width:991px)" rel="stylesheet" href="css/pad.css"/>
+						                         小屏幕：<link media="screen and(min-width:768px) and(max-width:768px)" rel="stylesheet" href="css/pad.css"/>
+						      2.只需要编写一个css文件,其中的部分代码只在特定的设备中加以执行
+						      
+<-----------------------------------------------------HTML5基础复习--------------------------------------------------------------->
+         标签, 属性, 值
+       1.标记:
+                      分类:
+             1.封闭类型:双标签
+             2.非封闭类型:单标签
+                      元素:即标记/元素=标记+内容
+                      元素的嵌套:
+                  <标记>
+                      <b></b>
+                  </标记>
+                              注意:嵌套的顺序,一定要用缩进关系表示层级关系
+       2.属性:
+                     标准属性:id , class , title , style 
+                     文本标记1.特殊字符  
+                  2.文本标记 
+                  3.分区元素:块分区元素:<div></div>  行分区元素:<span></span>
+                  4.分割元素:</hr>
+                  5.预格式化 :<pre></pre>--eval();
+                  6.行内元素特点
+                                    块级元素特点
+                  7.路径
+                  8.图像是一个特殊的行内块元素
+                  9.链接
+                  
+                  
+                  
+                         
+                      
+
+						      

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<h2>meter刻度尺</h2>
+                薪资:<meter min="0" max="10000" low="2000" high="1000" optimum="6666" value="1000"></meter>
+                薪资:<meter min="0" max="10000" low="2000" high="100000" optimum="6666" value="800"></meter>
+                薪资:<meter min="0" max="10000" low="2000" high="100000" optimum="6666" value="9000"></meter>
+                
+        <h2>可以动态变化的刻度尺</h2>
+               薪资:<meter min="10" max="10000" low="2000" high="10000" optimum="66666" value="0" id="p4"></meter>
+            <script type="text/javascript">
+//          	1.获取刻度尺
+                   var P4=document.getElementById("p4")
+//		        2.创建值得变量
+                   var v=0;
+                   var p4=document.getElementById("p4");
+//		        3.创建定时器
+                   var timer=setInterval(function(){
+//		            4.值得变量+500
+                       v+=500;
+		      	       p4.value=v; 
+//		            5.判断是否结束
+                       if(v>10000){
+		        	clearInterval(timer)
+		                 }
+		               },500)//时间;
+//		                           结束:达到最大值
+            </script>
+		        
+	</body>
+</html>

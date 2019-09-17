@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>canvas绘图</title>
+		<style type="text/css">
+			body{
+				text-align: center;
+			}
+			canvas{
+				background: #cecece;
+			}
+		</style>
+	</head>
+	<body>
+		<h2>htnl5--新特性canvas</h2>
+		<!--绘制画布-->
+		<canvas width="500px" height="400px" id="c3">
+                       您的浏览器版本太低,请升级
+        </canvas>
+        <script type="text/javascript">
+        	//1.获取画布
+        	var c3=document.getElementById("c3")
+        	//2.获取画笔
+        	var ctx=c3.getContext("2d");
+        	//3.绘制矩形
+        	ctx.fillStyle="aquamarine";//填充颜色
+        	ctx.fillRect(0,0,100,80);
+        	
+        	//绘制,右上角  左下角  右上角   居中的矩形
+        	//右上角
+        	ctx.fillStyle="red";//填充颜色
+        	ctx.fillRect(400,0,100,80);
+        	
+        	//左下角
+        	ctx.fillStyle="blue";//填充颜色
+        	ctx.fillRect(0,320,100,80);
+        	
+        	//右下角
+        	ctx.fillStyle="yellow";//填充颜色
+        	ctx.fillRect(400,320,100,80);
+        	
+        	//居中
+        	ctx.fillStyle="white";//填充颜色
+        	ctx.fillRect(200,160,100,80);
+        	
+        	//在画布上,描边一个可以左右移动的100*80的矩形
+        	//定时器 先清除画布上已有的内容,再重新绘制一个
+        </script>
+	</body>
+</html>

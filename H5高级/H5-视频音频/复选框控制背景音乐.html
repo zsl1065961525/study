@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>复选框控制背景音乐</title>
+	</head>
+	<body>
+		 <!--练习
+		  	 使用复选框控制网页的背景音乐
+		  	 []选中  播放音乐   点击事件:onchange--修改事件
+		  -->
+		<h2>音频</h2>
+		  <audio src="bg.mp3" id="a3">
+		  	   您的浏览器版本过低,请升级
+		  </audio>
+		  背景音乐:<input type="checkbox" name="" id="inp3" value="" />
+		  <script type="text/javascript">
+//		  	 1.获取音频元素
+              var a3=document.getElementById("a3"); 
+//           2.获取复选框元素
+              var inp3=document.getElementById("inp3"); 
+              inp3.onchange=function(){
+			     //  play()事件
+			   	 if(inp3.checked){//当处于暂停状态
+			   	 	//.播放音频
+			   	 	  a3.play();
+			   	 }else{
+			        //pause暂停音频
+			   	      a3.pause()
+			   	 }
+			   }
+		  </script>
+	</body>
+</html>

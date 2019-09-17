@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>canvas绘图</title>
+		<style type="text/css">
+			body{
+				text-align: center;
+			}
+			canvas{
+				background: #cecece;
+			}
+		</style>
+	</head>
+	<body>
+		<h2>htnl5--新特性canvas</h2>
+		<canvas width="800px" height="400px" id="c3">
+                       您的浏览器版本太低,请升级
+        </canvas>
+        <script type="text/javascript">
+        	//不张嘴
+        	var c3=document.getElementById("c3")
+        	var ctx=c3.getContext("2d");
+        	ctx.beginPath();
+        	ctx.arc(250,200,100,0*Math.PI/180,360*Math.PI/180)
+        	ctx.lineTo(250,200)
+        	ctx.lineTo(350,200)
+            ctx.stroke();
+            ctx.beginPath();
+        	ctx.arc(310,150,5,0*Math.PI/180,360*Math.PI/180)
+        	ctx.fillStyle="black";
+        	ctx.fill();
+            ctx.stroke();
+            ctx.beginPath();
+        	ctx.arc(300,150,15,0*Math.PI/180,360*Math.PI/180)
+            ctx.stroke();
+            
+//          张嘴
+            var c3=document.getElementById("c3")
+        	var ctx=c3.getContext("2d");
+        	ctx.beginPath();
+        	ctx.arc(250,200,100,30*Math.PI/180,340*Math.PI/180)
+        	ctx.lineTo(250,200)
+        	ctx.closePath();
+            ctx.stroke();
+            ctx.beginPath();
+        	ctx.arc(310,150,5,0*Math.PI/180,360*Math.PI/180)
+        	ctx.fillStyle="black";
+        	ctx.fill();
+            ctx.stroke();
+            ctx.beginPath();
+        	ctx.arc(300,150,15,0*Math.PI/180,360*Math.PI/180)
+            ctx.stroke();
+        </script>
+	</body>
+</html>

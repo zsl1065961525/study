@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>svg-定时器绘制矩形</title>
+		<style type="text/css">
+			body{
+				text-align: center;
+				
+			}
+			svg{
+				background: #9ACD32;
+			}
+		</style>
+	</head>
+	<body>
+		<!--//绘制两个矩形,初始高度为1,使用定时器修改高度,一个高度到300时停止,一个到150时停止-->
+		<svg id="s3" width="500" height="400">
+          <rect width="30" height="1" x="80" y="390" fill="#f00" fill-opacity="0.3" strock="#f023" id="r3"></rect>
+          <rect width="30" height="5" x="160" y="90" fill="blue" fill-opacity="0.3" strock="#f023" id="r2"></rect>
+       </svg>
+		<script type="text/javascript">
+			var h1=1
+            var y1=1
+            var r3=document.getElementById("r3")
+            //创建一个定时器
+            var timer1=setInterval(function(){
+            	h1=parseInt(r3.getAttribute("height"));
+            	y1=parseInt(r3.getAttribute("y"));
+            	h1+=3
+            	y1-=3
+            	r3.setAttribute("height",h1)
+            	r3.setAttribute("y",y1)
+            	if (h1>300) {
+            		clearInterval(timer1)
+            	}
+            },1000/60)
+            
+            var h2=1
+            var y2=1
+            var r2=document.getElementById("r2")
+            var timer2=setInterval(function(){
+            	h2=parseInt(r2.getAttribute("height",h2))
+            	y2=parseInt(r2.getAttribute("y",h2))
+            	h2+=3
+            	//去掉y2,将不再向下移动,只是高度改变
+            	y2+=3
+            	r2.setAttribute("height",h2)
+            	r2.setAttribute("y",y2)
+            	if (h2>150) {
+            		clearInterval(timer2)
+            	}
+            },1000/60)
+		</script>
+	</body>
+</html>

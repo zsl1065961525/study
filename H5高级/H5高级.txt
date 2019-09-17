@@ -1,0 +1,332 @@
+﻿HTML5新特性：
+       新的语义标签--结构标记，通过一组特殊的标记来完成网页的布局,没有任何外观样式
+                           目的：提升语义性
+                           类型：1) <header><header>
+                     2)<nav></nav>
+                     3)<section></section>
+                     4)<article></article>
+                     5)<aside></aside>
+                     6)<footer></footer>
+增强型的表单
+      1.新的input type类型
+           H4:text  password checkbox radio file submit reset 
+           H5:email  url number search color date month week 
+      2.新的表单元素(控件)
+           H4:input button select textarea
+           H5:datalist progress  meter output
+               datalist:数据列表,datalist本身不可见
+                 语法:<datalist>
+                          <option>xxx</option>
+                       </datalist>
+                       <input type="text">
+                       datalist是为input提供建议列表的
+               progress:进度条,
+		                                    语法:1.左右晃动进度条:<progress></progress>
+		                         2.具有指定进度值的进度条:<progress value="0.5">
+		           meter:刻度尺
+		                 meter:用于标识一个值所处的范围
+		                                         超过范围:不可接受(红色)
+								                    范围之内:可以接受(黄色)
+								                    范围之内,非常满意:非常优秀(绿色)
+								                语法:<meter></meter>  
+								                属性:min:最小    max:最大   low:下限   high:上限   optimum:最佳值   value:当前值
+							 output:输出,语义标签,,没有任何的外观样式,样式等同于span
+		                                语法:<output></output>
+		                                
+表单元素新属性
+      H4:type id value name style readonly disabled checked
+      H5:paceholder:占位符
+         autofocus:自动获取输入焦点
+         multiple:允许输入框中输入多个值,用都逗号分开
+         form:用于把输入于放置在表单外部 
+         required:不能为空
+         maxlength:字符串的最大长度
+         minlength:字符串的最小长度
+         min 
+         max 
+         pattern:制定的内容符合正则表达式
+       
+音频和视频:
+     视频播放:
+      <video>
+         <source src="x.mp4"></source>
+         <source src="x.org"></source>
+         <source src="x.webm"></source>
+                 您的浏览器版本太低,请升级
+      </video>
+	      属性:本身是一个300*150的inline-block元素
+	      autoplay:自动播放
+	      controls:控件
+	      muted:静音
+	      loop:自动循环播放
+	      poster:在播放第一帧画面之前的广告
+	      preload:预加载
+	                      值：1.auto：预加载一定时长的视频和数据 
+	            2.metadata：仅预加载原数据（尺寸，时长，第一帧画面） 
+	            3.none：不加载任何时长
+	      #js对象属性
+	         currentTime    当前的播放时长
+	         duration       总时长
+	         paused：true false 当前视频是否处于暂停状态
+	         volume（0~1）        音量
+	         palybackRate   回放速录：大于1--快播  ，小于1--慢播
+	       #js成员方法
+	         play()     播放视频
+	         pause()   暂停视频播放
+	       #js事件
+	         onplay   当时间开始播放触发的事件
+	         onpause  当视频暂停播放触发事件  
+	      
+	      
+	    练习：1.不使用video自带控件，自定义播放暂停按钮
+	      2.视频暂停时，显示广告，只要播放，广告隐藏
+	      
+     音频播放:
+      <audio>
+         <source src="X.mp3"></source>
+         <source src="X.wav"></source>
+      </audio>
+                  注意:默认是300*30的inline-block元素
+                  属性:本身是一个300*150的inline-block元素
+	      autoplay:自动播放
+	      controls:控件
+	      muted:静音
+	      loop:自动循环播放
+	      poster:在播放第一帧画面之前的广告
+	      preload:预加载
+	                      值：1.auto：预加载一定时长的视频和数据 
+	            2.metadata：仅预加载原数据（尺寸，时长，第一帧画面） 
+	            3.none：不加载任何时长
+	      #js对象属性
+	         currentTime    当前的播放时长
+	         duration       总时长
+	         paused：true false 当前视频是否处于暂停状态
+	         volume（0~1）        音量
+	         palybackRate   回放速录：大于1--快播  ，小于1--慢播
+	       #js成员方法
+	         play()     播放视频
+	         pause()   暂停视频播放
+	       #js事件
+	         onplay   当时间开始播放触发的事件
+	         onpause  当视频暂停播放触发事件
+  
+Canvas绘图
+    常用点:地图,股票走势,画布绘图,
+    Canvas是一个画布,H5提供的绘图基础
+            语法:<canvas width="" hight="">
+                           您的浏览器版本太低,请升级
+         </canvas>
+         canvas标签在浏览器中默认的是300*150的inline-block
+                      在canvas里面,只能用js的属性来赋值,不能用css的属性来赋值
+                      每个画布上,有且只有一个"画笔"的对象,使用该对象来绘图:var ctx=canvas.getContext("2d");
+     canvas属性
+       1.使用canvas绘制矩形
+         ctx.lineWidth=1;  描边宽度(边线宽度)
+         ctx.fillStyle="#999";  填充样式
+         ctx.strockStyle="#ff0";  描边的样式
+         ctx.fillRect(x,y,w,h);    填充矩形
+         ctx.strokRect(x,y,w,h);   描边矩形
+         ctx.clearRect(x,y,w,h);   清除矩形范围内所有的内容 
+       2.使用canvas绘制文本
+         ctx.textBaseline="top";      改变基线
+         ctx.font="12px sans-serif";  文本的 大小和字体
+         ctx.fillText(str,x,y);       填充一段文本
+         ctx.strokeText(str,x,y);     描边一段文本
+         ctx.measureText(str);        测量文本的宽度对象
+            var obj=ctx.measureText(str);
+            var w=obj.width
+         //右上角一小段文本"abcxy"
+       3.使用canvas绘制路径
+                  路径:由多个坐标点组成的任意形状,路径不可见,可用于"描边","填充"
+                  #复杂图形依靠路径
+         ctx.beginPath();    开始一条新路径
+         ctx.closePath();    闭合当前路径
+         ctx.moveTo();       移动到指定的点
+         ctx.lineTo();       从当前点到指定点画直线
+         ctx.stroke();       
+         //创建一个500*400的画布
+         //在中间的位置为起始点画一个正方形
+            ctx.lineWidth=5; //表示线宽
+            ctx.strockStyle="rosybrown";  //描边的样式
+            ctx.beginPath();
+            ctx.moveTo();
+            ctx.lineTo();
+            ctx.closePath();
+       4.使用canvas绘制弧度路径
+            ctx.arc(cx,cy,r,start,end);   绘制圆拱形
+            #圆弧度 0~2*Math.PI
+            #角度到弧度的转换: n*Math.PI/180
+            ctx.strock();   描边
+            ctx.fill();     填充
+       5.使用canvas绘制图像
+            canvas是属于客户端的技术,图片是保存在服务器上的,所以浏览器先下载,在进行绘制图片
+            var  p3=new Image();   创建图片对象
+            p3.src="x.jpg"         下载指定的图片
+            p3.onload=function(){  当图片下载成功后触发事件
+                console.log(p3.width);   得到图片的宽度
+                ctx.drawImage(p3,x,y);   绘制原始图片大小
+                ctx.drawImage(p3,x,y,w,h);  拉伸图片
+            } 
+        6.适应canvas绘制--图像变形
+            canvas绘图中有变形技术,是针对某一个图形/图像在绘制过程中变形:rotate();translate();   
+            ctx.rotate(弧度);          旋转绘制图像以画布原点为轴心
+            ctx.translate(x,y);       将画布的原点平移到指定位置
+            ctx.save();               保存画笔当前所有状态值
+            ctx.restore();            恢复画笔上一次保存时所有状态值
+
+SVG绘制
+                                SVG与canvas的不同点
+                    canvas绘图                                                          SVG绘图
+类型                                              2D位图                                                                2D矢量图
+如何绘制                                 使用js代码绘图                                                   使用标签绘图
+事件绑定                    每个图形不是一个元素，无法直接绑定事件               每个图形都是元素，可以直接绑定事件监听                                                             
+应用场景                                     游戏特效                                                                  地图定位
+
+          位图：由一个一个的像素点组成，每个点各有自己的颜色，色彩细腻，但是放大会失真
+          矢量图：由一条一条线条组成，每个线条由自己颜色和方向，可以无限缩放，但是细节不够丰富
+          
+    SVG的使用方法：
+         <svg></svg>  本身是一个300*150的inline-black
+         <rect></rect>          矩形
+         <circle></circle>        圆形
+         <elipse></elipse>      椭圆
+         <line></line>          直线
+         <polyline></polyline>  多边形
+           
+         svg绘图特性
+           1.所有绘图默认只有填充色(黑色)
+           2.svg图形的样式可以用元素属性声明,也可以使用css样式声明
+                                  当使用css样式声明的时候,只能用svg专用样式,不能是css样式
+                                  如边框只能用stroke,不能用border
+           3.图形可以使用js赋值,但不能使用html, dom只能使用核心dom
+                                     改变宽 r2.setAttibute("width",300)
+                                     改高: r2.setAttibute("height",300)
+           4.如何动态添加svg图形
+               1>html字符串拼接
+                  var html="<rect></rect>"
+                  svg.innerHTML=html;
+               2>创建对象
+                  var rect=document.createElementNS("http://www.w3.org/2000/svg","rect")
+                  svg.appendChild(rect);
+                                   矩形开始看坐标,宽,高,填充颜色,透明度 边框颜色 边框透明感
+	               rect.setAttribute("x",235);
+	               rect.setAttribute("y",50);
+	               rect.setAttribute("width",30);
+	               rect.setAttribute("height",300);
+	               rect.setAttribute("fill","#FF6666")
+	               rect.setAttribute("fill-opacity","0.5")
+	               rect.setAttribute("stroke","#990033")
+	               rect.setAttribute("stroke-opacity","0.5")
+	               var s3=document.getElementById("s3");
+	               s3.appendChild(rect)
+         1.创建画布
+            <svg id="" width="" height="">
+                                       创建图形标签:矩形<rect width="" height="" x="" y="" fill="" fill-opacity="" stroke="" srtoke-opacity=""></rect>
+                                                               圆形<circle cx="" cy="" r="">
+            </svg>
+                       在svg画布上随机绘制30个实心圆,大小,位置,填充颜色,透明度均随机,点击某个圆之后,他会慢慢变大,变浅,直至消失                     
+         2.椭圆
+           <elipse rx="" ry="" cx="" cy=""></elipse> 
+         3.直线
+           <line x1="" y1="" x2="" y2="" stroke="" stoke-width=""></line> 
+         4.折线
+           <polyline points="x,y x,y x,y ......"></polyline> 
+         5.文本
+           <text font-size="" fill="" >文本内容</text>
+         6.图像
+           <image xlink:href="x.opj" x="" y="" width="" height=""></image>
+         7.渐变对象
+           
+        html新特性--canvas/svg第三方库
+          http://d3js.org          d3开源免费库
+          http://echarts.baidu.com    百度免费库
+        
+        echarts使用步骤
+          1.下载并且在程序中引入echarts.js文件
+          2.创建图形容器 
+             <div id="main" style=""></div>
+          3.通过js程序获取容器,并且创建echarts对象
+            var main=docu......
+            var mychart=echarts.init(main)
+          4.创建配置项
+            var option={
+                 
+            }
+          5.将配置项添加给echarts对象中
+             mychart.setOption(option)
+        
+
+       弹性布局
+         什么是弹性布局：是网页布局的一种方式,注意解决某元素中"子元素"的布局方式,为布局提供最大的灵活性
+         相关概念:
+        1>弹性布局容器:简称"容器",是子元素的父元素
+        2>弹性布局的项目,简称"项目"     项目---要实现布局元素的子元素,称项目
+        3>主轴:项目们排列方向的一根轴,如果项目们按X轴(横向)排列,那么x轴就是主轴
+                                                                                 如果项目们按Y轴(纵向)排列,那么Y轴就是主轴
+        4>交叉轴:与主轴交叉的一根轴就是交叉着,如果主轴是X轴,那么Y轴就是交叉轴
+                                                                                                如果主轴是Y轴,那么X轴就是交叉轴
+         语法知识
+        1>flex容器
+                           将元素变为flex容器后,那么,所以得子元素将变为flex项目,都允许按照弹性布局排列
+                           如何将元素变为flex容器
+                           属性:display
+                           取值:1.flex  将块级元素变为容器
+              2.inline-flex  将行内元素变为容器
+                           注意:1.元素设置为flex容器后,子元素的float  vertical-align clear将失效
+              2.容器的text-align将失效
+        2>容器的属性
+           1.flex-direction:指定容器的主轴方向,以及排列方向
+                                         取值:1>row  默认值,即主轴为X,起点在左端
+                    2>row-reverse  主轴还是在x轴,起点在右端
+                    3>column  主轴为y轴,起点在顶端
+                    4>column-reverse  主轴在y轴,起点在底端
+           2.flex-wrap:当一个主轴排列不下所有项目时,指定子元素项目如何换行
+                                          取值:1>nowrap   默认值,空间不够时,也不换行,项目自动缩小
+                    2>wrap     换行
+                    3>wrap-reverse  不仅换行,还改变方向
+           3.flex-flow:是flex-direction和flex-wrap的缩写方式
+                                          取值:1>row nowrap
+                    2>direction weap
+           4.justify-content:定义主轴上的对齐方式
+                                          取值:1>flex-start:  在主轴的起点对齐
+                    2>flex-end     在主轴的终点对齐
+                    3>space-between  在主轴的两端对齐
+                    4>center         在主轴居中对齐
+                    5>space-around   每个项目的两端间距相同
+            5.align-items:定义项目在交叉轴上的对齐方式
+                                          取值:1>flex-start  在交叉轴的起点对齐
+                    2>flex-end    在交叉轴的终点对齐
+                    3>center      在交叉轴居中对齐
+                    4>baseline
+                    5>stretch     项目在没有高度时,在交叉轴上将沾满空间
+                    
+        3>项目(子元素)的属性
+                            该组属性只能设置在某一项属性上,只控制一个项目,是不影响容器其他的项目效果
+            1.order: 
+                                           作用：定义项目的排列顺序,值越小越靠近起点,默认值为0
+                                           取值:整数数组,无单位
+            2.flex-grow:
+                                           作用:定义项目的放大比例,如果容器有足够空间,项目将放大
+                                           取值:整数数字,无单位,  默认值0--不放大   ,取值越大,占据的空间越大
+            3.flex-shrink
+                                           作用:定义项目的缩小比例,及容器空间不足时,项目该如何缩小取值
+                                           默认值:1   空间不足时,等比例缩小,取值为0时,则不缩小
+            4.align-self
+                                           作用:定义当前项目在交叉轴上的对齐方式
+                                           取值:1.flex-start
+                     2.flex-end
+                     3.center
+                     4.baseline
+                     5.stretch   项目被拉伸  沾满整个container
+                     6.auto   继承来自父元素的align-item属性
+                                           
+    复杂选择器之结构伪类
+           通过结构关系进行元素匹配
+        1.:first-child  匹配其父元素中的首个子元素
+        2.:last-child   匹配其父元素中的最后一个子元素
+        3.:nth-child(n) 匹配其父元素中的第n个子元素
+        4.:empty        匹配没有子元素的元素
+        5.:only-child   匹配属于其父元素唯一的子元素
+        
+                                           
+                   

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>饼状图</title>
+		<script src="../js/echarts.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="main" style="width: 500px; height: 400px;">
+			
+		</div>
+		<script type="text/javascript">
+			//获取容器
+			var main=document.getElementById("main")
+			//创建echarts对象
+			var myechart=echarts.init(main);
+			//创建配置项
+			var option = {
+			    title : {
+			        text: '中少年喜欢的明星',
+			        subtext: '纯属虚构',
+			        x:'center'
+			    },
+			    tooltip : {
+			        trigger: 'item',
+			        formatter: "{a} <br/>{b} : {c} ({d}%)"
+			    },
+			    legend: {
+			        orient: 'vertical',
+			        left: 'left',
+			        data: ['小明','小刚','小红','小李','小马']
+			    },
+			    series : [
+			        {
+			            name: '访问来源',
+			            type: 'pie',
+			            radius : '55%',
+			            center: ['50%', '60%'],
+			            data:[
+			                {value:33, name:'小明'},
+			                {value:31, name:'小刚'},
+			                {value:23, name:'小红'},
+			                {value:13, name:'小李'},
+			                {value:15, name:'小马'}
+			            ],
+			            itemStyle: {
+			                emphasis: {
+			                    shadowBlur: 10,
+			                    shadowOffsetX: 0,
+			                    shadowColor: 'rgba(0, 0, 0, 0.5)'
+			                }
+			            }
+			        }
+			    ]
+			};
+			//将配置项添加echarts对象中
+		    myechart.setOption(option);
+		</script>
+	</body>
+</html>

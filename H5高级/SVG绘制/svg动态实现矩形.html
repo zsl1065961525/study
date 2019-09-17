@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body{
+				text-align: center;
+				
+			}
+			svg{
+				background: #9ACD32;
+			}
+		</style>
+		
+	</head>
+	<body>
+		<svg id="p3" width="500" height="400">
+           
+       </svg>
+        <script type="text/javascript">
+        	var rect=document.createElementNS("http://www.w3.org/2000/svg","rect")
+//      	矩形开始看坐标,宽,高,填充颜色,透明度 边框颜色 边框透明感
+            rect.setAttribute("x",0)
+            rect.setAttribute("y",0)
+            rect.setAttribute("width",100)
+            rect.setAttribute("height",80)
+            p3.appendChild(rect);
+            
+            //在画布中间创建30*300矩形柱子
+            //初始化为淡红色填充和深红色描边,都是半透明
+            //鼠标悬停是变为不透明
+            //鼠标移入移出事件  rect.onmouseover=functin(){}
+            //             rect.onmouseout=function(){}
+        </script>
+	</body>
+</html>

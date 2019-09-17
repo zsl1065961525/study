@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>canvas绘图</title>
+		<style type="text/css">
+			body{
+				text-align: center;
+			}
+			canvas{
+				background: #cecece;
+			}
+		</style>
+	</head>
+	<body>
+		<h2>canvas--绘制图像</h2>
+		<canvas width="800px" height="400px" id="c3">
+                       您的浏览器版本太低,请升级
+        </canvas>
+        <script type="text/javascript">
+        	
+        	var c3=document.getElementById("c3")
+        	var ctx=c3.getContext("2d");
+            var  p3=new Image();  // 创建图片对象
+            p3.src="img/p3.png"         //下载指定的图片
+			p3.onload = function() {    //当图片下载成功后触发事件
+				console.log(p3.width);
+				ctx.drawImage(p3,0,0);
+			} 
+			
+			var  p4=new Image();  // 创建图片对象
+            p4.src="img/p4.png"         //下载指定的图片
+			p4.onload = function() {    //当图片下载成功后触发事件
+				console.log(p4.width);
+				ctx.drawImage(p4,600,0);
+			} 
+			
+			var  p3=new Image();  // 创建图片对象
+            p3.src="img/p3.png"         //下载指定的图片
+			p3.onload = function() {    //当图片下载成功后触发事件
+				console.log(p3.width);
+				ctx.drawImage(p3,0,300);
+			}
+			
+			var  p5=new Image();  // 创建图片对象
+            p5.src="img/p5.png"         //下载指定的图片
+			p5.onload = function() {    //当图片下载成功后触发事件
+				console.log(p5.width);
+				ctx.drawImage(p5,600,300);
+			}
+			
+			var  p5=new Image();  // 创建图片对象
+            p5.src="img/p5.png"         //下载指定的图片
+			p5.onload = function() {    //当图片下载成功后触发事件
+				console.log(p5.width);
+				ctx.drawImage(p5,300,150);
+			}
+			
+			//左右移动的飞机
+			var x=0;
+        	var xDirection=1;  //1 向右 ; -1  向左
+        	var y=0;
+        	var yDirection=1;
+        	//创建一个定时器
+        	var timer=setInterval(function(){
+        	 	//清除原有矩形
+        	 	   ctx.clearRect(0,0,800,400);
+        	 	//修改x位置
+        	 	   x+=5*xDirection;
+        	 	   y+=5*xDirection;
+        	 	var  p3=new Image();  // 创建图片对象
+	            p3.src="img/p3.png"         //下载指定的图片
+				p3.onload = function() {    //当图片下载成功后触发事件
+					ctx.drawImage(p3,x,y);
+				} 
+        	 	//判断  如果xDirection=-1,向左 ;如果xDirection=1,向右
+        	 	 if(x>600 ){
+        	 	 	xDirection=-1;
+        	 	 }else if(x<0 ){
+        	 	 	xDirection=1;
+        	 	 }
+        	 	 if(y>300 ){
+        	 	 	xDirection=-1;
+        	 	 }else if(y<0 ){
+        	 	 	xDirection=1;
+        	 	 }
+        	 },100)
+			
+        </script>
+	</body>
+</html>

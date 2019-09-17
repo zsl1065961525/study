@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>canvas--图像变形</title>
+		<style type="text/css">
+			body{
+				text-align: center;
+			}
+		    canvas{
+		    	background: #9ACD32;
+		    }
+		</style>
+	</head>
+	<body>
+		<h2>canvas--图像变形</h2>
+		<canvas id="c3" width="500" height="400">
+			您的版本过低,请升级
+		</canvas>
+		
+		<!--//画两架飞机,右上角飞机比中心飞机快一倍-->
+		<script type="text/javascript">
+			 var c3=document.getElementById("c3");
+			 var ctx=c3.getContext("2d")
+			 //创建一个图片p3
+			 var  p3=new Image();  
+             p3.src="img/p0.png"   
+             //绑定下载事件
+             p3.onload = function() { 
+//           	创建两个变量,保存两架飞机转换角度
+                var deg1=10
+                var deg2=20
+//              创建定时器
+                var timer=setInterval(function(){
+//              绘制飞机1
+			 	 //保存状态
+			 	   ctx.save();
+			 	 //平移原点中心
+			 	   ctx.translate(250,200)
+			 	 //旋转角度
+			 	   ctx.rotate(deg1*Math.PI/180)
+			     //绘制飞机
+			       ctx.drawImage(p3,-100,-50)
+			     //将飞机恢复当前状态
+			       ctx.restore();
+			     //手工累加旋转角度
+			       deg1+=10;
+//			    绘制飞机2
+                 //保存状态
+			 	   ctx.save();
+			 	 //平移原点中心
+			 	   ctx.translate(400,100)
+			 	 //旋转角度
+			 	   ctx.rotate(deg2*Math.PI/180)
+			     //绘制飞机
+			       ctx.drawImage(p3,-100,-50)
+			     //将飞机恢复当前状态
+			       ctx.restore();
+			     //手工累加旋转角度
+			       deg2+=20; 
+
+			 },1000/30)
+			     
+			} 
+			 
+//			
+		</script>
+	</body>
+</html>
