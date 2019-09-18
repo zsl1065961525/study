@@ -9,7 +9,7 @@
 
 3.JavaScript错误有哪几种?特点是什么?
 答:语法错误
-   引用错误
+   执行错误
 4.JavaScript的数据类型包括什么?分别写出.
 答:简单：数字，字符串，布尔值，Null，undefined
    复杂：object
