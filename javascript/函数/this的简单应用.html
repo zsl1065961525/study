@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				height: 50px;
+				width: 50px;
+				background: red;
+				display: inline-block;
+			}
+		</style>
+	</head>
+	<body>
+		<!--五个div,横向排列,50*50,背景红
+		点击所有div中的随机某个div时,该div背景颜色变为红色-->
+		<div id=""></div>
+		<div id=""></div>
+		<div id=""></div>
+		<div id=""></div>
+		<div id=""></div>
+		
+		<script type="text/javascript">
+			var divs = document.getElementsByTagName('div')
+			console.log(divs);
+            for(var i=0;i<divs.length;i++){
+                divs[i].onclick = function(){
+                this.style.backgroundColor = 'blue';
+               }
+            }
+    </script>
+</body>
+</html>
+		</script>
+	</body>
+</html>

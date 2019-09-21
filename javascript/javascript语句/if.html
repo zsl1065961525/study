@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="div">
+			年龄判断
+		</div>
+		<script type="text/javascript">
+			var pro = prompt("输入年龄");
+			if (pro<=0) {
+				div.innerHTML = "还未出生"
+			}else if(pro>0 && pro<6){
+				div.innerHTML = "小儿童"
+			} else if(pro>=6 && pro<18){
+				div.innerHTML = "大儿童"
+			}else if (pro>=18 && pro<25) {
+				div.innerHTML = "青年"
+			} else if(pro>=25 && pro<40){
+				div.innerHTML = "中年"
+			} else if (pro>=40 && pro<60) {
+				div.innerHTML = "老年"
+			} else if(pro>60 && pro<80){
+				div.innerHTML = "老老年"
+			}else{
+				div.innerHTML = "寿比南山"
+			}
+		</script>
+	</body>
+</html>

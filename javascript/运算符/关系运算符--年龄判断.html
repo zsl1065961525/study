@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		 <input type="text" name="inp" id="inp" value="" />
+		 <button id="btn">点击查看优惠力度</button>
+		 <span id="d1"></span>
+		 	
+		 
+		 
+		 <script type="text/javascript">
+		 	var inp = document.getElementById("inp")
+		 	var btn = document.getElementById("btn")
+		 	btn.onclick = function(){
+//		 		console.log(inp.value)
+                if(inp.value<=3){
+                	 d1.innerHTML = '免单'
+                }else if(inp.value>3&&inp.value<80){
+                	d1.innerHTML = '全款'
+                }else{
+                	d1.innerHTML = '5折'
+                }
+		 	}
+		 </script>
+	</body>
+</html>
