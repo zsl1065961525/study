@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		    <!--练习:1.随便使用一个标签,给他一个id属性,加入内容
+				     2.获取这个元素的标签名
+				     3.如果这个元素的加粗的,就把他变成不加粗显示-->
+     
+			<h1 id="b">我是不是加粗的</h1>
+		
+		<script type="text/javascript">
+			var b = document.getElementById('b')
+			//加粗的标签:h1~h6,b,strong
+//			方法一
+			if (b.tagName =='H1' || b.tagName =='H2' || b.tagName =='H3' || b.tagName =='H4' || b.tagName =='H5' || b.tagName =='H6' ||b.tagName =='B' ||b.tagName =='STRING' )
+			 {
+				b.style.fontWeight = 400 ;
+			}
+			//方法二:不管是不是粗体,统一变为细体
+			 b.style.fontWeight = 400 ;
+			 
+			 //方法三:
+			 var arr = ['H1','H2','H3','H4','H5','H6','B','STRONG']
+//			 console.log(arr.indexOf('DIV'))  数组中有的显示下标志,没有的显示-1
+             var isTure = arr.indexOf(b.tagName)
+//           console.log(isTure)
+             //判断如果是粗体标签签名
+             if (isTure != -1) {
+             	b.style.fontWeight = 200
+             	b.style.color = 'red';
+             }
+			 
+			
+		</script>
+	</body>
+</html>

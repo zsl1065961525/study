@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div{
+			  width:100px;
+			  height: 100px;
+			  background-color: red;	
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div id="mydiv">
+			
+		</div>
+		<script type="text/javascript">
+			var mtdiv = document.getElementById('mydiv')
+//			点击事件
+			mydiv.onclick = function(){
+				mydiv.style.backgroundColor = 'blue';
+			}
+//			双击事件
+            mydiv.ondblclick = function(){
+				mydiv.style.backgroundColor = 'yellow';
+			}
+//          鼠标按下
+            mydiv.onmousedown = function(){
+				mydiv.style.backgroundColor = 'orange';
+			}
+//          鼠标抬起
+            mydiv.onmouseup = function(){
+				mydiv.style.backgroundColor = 'green';
+			}
+            
+//          鼠标移动、移入、移出会触发多次，取决于嵌套和鼠标位置
+//          鼠标移动：需要注意，只要鼠标移动就触发
+            document.onmousemove = function(){
+//          	console.log('移动了')
+            }
+             mydiv.onmousemove = function(){
+//          	console.log('在div中移动了')
+            }
+//          鼠标移入，可能会触发冒泡（从内逐级向外触发）
+            mydiv.onmouseover = function(){
+//          	console.log('移入在div了')
+            }
+//          鼠标移出 
+            mydiv.onmouseout = function(){
+//          	console.log('离开了div')
+            }
+            
+            mydiv.onmouseenter = function(){
+            	console.log('来了，只触发一次哦')
+            }
+            mydiv.onmouseleave = function(){
+            	console.log('出去，也只触发一次')
+            }
+		</script>
+	</body>
+</html>

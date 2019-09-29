@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			img{
+				width: 300px;
+				height: 300px;
+			}
+		</style>
+	</head>
+	<body>
+		<img src="u=2209242808,4171045306&fm=26&gp=0.jpg"/><br />
+		<img src="下载.jpg"/>
+		<script type="text/javascript">
+			var imgs = document.getElementsByTagName('img')
+			var img1s = imgs[0].getAttribute('src')
+			var img2s = imgs[1].getAttribute('src')
+			console.log(img1s.indexOf('jpg'))
+		</script>
+	</body>
+</html>

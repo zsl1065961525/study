@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#b{
+				background: blue;
+			}
+		</style>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var body = document.querySelector('body')
+			body.innerHTML = '<ul><li>1111<li>2222<li>3333</ul>';
+			var lis =document.getElementsByTagName('li');
+			lis[1].setAttribute('id','b');
+		</script>
+	</body>
+</html>
